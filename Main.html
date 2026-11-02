@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>School of Flips FX | Trading education and community</title>
+<meta name="description" content="School of Flips is a trading community that teaches disciplined, rules-based trading.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#101721;--ink:#ffffff;--muted:#a9b6c6;--panel:#16202d;--line:#243246;
+  --accent:#37b5ff;--accent-ink:#101721;--glow:#07253d;
+  --hero-bg:#101721;--hero-ink:#ffffff;--hero-muted:#a9b6c6;
+  --display:'Bricolage Grotesque','Segoe UI',Arial,sans-serif;
+  --body:'Instrument Sans','Segoe UI',Arial,sans-serif;
+  color-scheme:dark;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
+a{color:inherit}.socials a,#wa-direct{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;letter-spacing:-.02em}
+h2{font-size:clamp(1.9rem,4.5vw,2.8rem);font-weight:800;max-width:20ch;color:var(--accent)}
+h3{font-size:1.25rem;font-weight:600}
+p{margin:0 0 1rem;max-width:62ch}
+.btn{display:inline-block;padding:.85rem 1.4rem;border-radius:.6rem;font-weight:600;text-decoration:none;border:2px solid transparent;cursor:pointer;font:600 1rem var(--body)}
+.btn-main{background:var(--accent);color:var(--accent-ink)}
+.btn-main:hover{filter:brightness(1.05)}
+.btn-ghost{border-color:currentColor;background:transparent;color:inherit}
+section{padding:5rem 0}
+
+/* hero */
+.hero{background:radial-gradient(60rem 28rem at 78% 30%,var(--glow),transparent 70%),var(--hero-bg);color:var(--hero-ink);padding:0 0 5rem}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 0;flex-wrap:wrap}
+.logo{display:block;line-height:0}.logo img{height:3.4rem;width:auto;display:block;mix-blend-mode:lighten}
+.nav ul{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.nav a{text-decoration:none;color:var(--hero-muted);font-weight:500}
+.nav a:hover{color:var(--accent)}
+.hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:center;padding-top:3.5rem}
+.hero h1{font-size:clamp(2.6rem,7vw,5rem);font-weight:800;color:#fff;text-shadow:0 0 2.5rem var(--glow)}
+.hero p{color:var(--hero-muted);font-size:1.2rem;margin:1.4rem 0 2rem}
+.cta{display:flex;gap:.9rem;flex-wrap:wrap}
+.hero-visual{display:grid;place-items:center}
+.badge{display:block;width:min(24rem,84vw)}
+.mentor-img{display:block;width:100%;height:auto;border-radius:1rem}
+.badge.big{width:min(26rem,80vw)}
+.hero .hint{margin:1.2rem 0 0;font-size:.9rem;color:var(--hero-muted);text-align:center}
+
+/* stats */
+.stats{display:flex;flex-wrap:wrap;gap:2.5rem 4rem;margin-top:3.5rem;padding-top:2rem;border-top:1px solid #26364b}
+.stats b{display:block;font:800 2.2rem var(--display)}
+.stats span{color:var(--hero-muted);font-size:.95rem}
+.fine{font-size:.85rem;color:var(--hero-muted);margin-top:1.2rem}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;align-items:start}
+.rule{margin-top:1.6rem;padding-left:1.1rem;border-left:4px solid var(--accent);font:600 1.3rem var(--display)}
+
+/* services */
+.programs{background:var(--panel);border-block:1px solid var(--line)}
+.svc{list-style:none;margin:2.5rem 0 0;padding:0;border-top:1px solid var(--line)}
+.svc li{display:grid;grid-template-columns:1fr auto;gap:1.2rem 2.5rem;align-items:center;padding:1.8rem 0;border-bottom:1px solid var(--line)}
+.svc p{margin:.5rem 0 0;color:var(--muted)}
+.svc .note{font-size:.9rem}
+.buy{display:flex;align-items:center;gap:1.5rem}
+.buy .price{font:800 2rem var(--display);color:var(--accent);min-width:7.5rem;text-align:right}
+.buy .price small{display:block;font:500 .85rem var(--body);color:var(--muted)}
+.buy .btn{white-space:nowrap}
+
+/* method */
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin:2.5rem 0 0;padding:0;list-style:none}
+.steps li{counter-increment:s;border-top:4px solid var(--accent);padding-top:1rem}
+.steps li::before{content:counter(s);font:800 1.6rem var(--display);display:block;margin-bottom:.4rem;color:var(--accent)}
+.steps p{color:var(--muted);margin:.5rem 0 0;font-size:1rem}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+form{display:grid;gap:1rem}
+label{display:grid;gap:.35rem;font-weight:600;font-size:.95rem}
+input,select,textarea{font:400 1rem var(--body);padding:.75rem .9rem;border-radius:.5rem;border:1.5px solid var(--line);background:var(--panel);color:var(--ink)}input:focus,select:focus,textarea:focus{border-color:var(--accent)}
+.socials{display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:1.4rem}
+
+footer{background:#101721;border-top:1px solid var(--line);color:var(--hero-muted);padding:2.5rem 0;font-size:.9rem}
+footer p{max-width:80ch}
+
+@media (max-width:52rem){
+  section{padding:3.5rem 0}
+  .hero-grid,.about,.contact{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .svc li{grid-template-columns:1fr}
+  .buy{justify-content:space-between}
+  .buy .price{text-align:left;min-width:0}
+  .hero-visual{margin-top:1rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero" id="home">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="logo" href="#home" aria-label="School of Flips FX home"><img class="logo-img" alt="School of Flips FX" src="logo.jpg"></a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#method">Method</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero-grid">
+      <div>
+        <h1>Poverty has no glory. Keep pushing.</h1>
+        <p>School of Flips FX is a forex trading community that teaches clear rules, real trade reviews and risk control first, so you can flip your results for good.</p>
+        <div class="cta">
+          <a class="btn btn-main" href="#services">Get started</a>
+          <a class="btn btn-ghost" href="https://t.me/schoolofflipscommunity" target="_blank">Join the free community</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="badge"><img class="mentor-img" id="mentor-hero" alt="Godfather of Price Action logo" src="godfather.jpg"></div>
+        <p class="hint">Your mentor: Godfather of Price Action</p>
+      </div>
+    </div>
+    <div class="stats">
+      <div><b>[78]%</b><span>Win rate</span></div>
+      <div><b>[999]+</b><span>Trades taken</span></div>
+      <div><b>[5500]+</b><span>Community members</span></div>
+    </div>
+    <p class="fine">Achievement: 78% win rate, 999+ trades taken, 5500+ community members</p>
+    <p>Achieved through consistent application of our proven price action strategies.</p>
+    <p class="fine">Please note: The above statistics are for illustrative purposes only. Actual trading results may vary and are not guaranteed.</p>
+  </div>
+</header>
+
+<main>
+<section id="about">
+  <div class="wrap about">
+    <div class="badge big"><img class="mentor-img" id="mentor-about" alt="Godfather of Price Action logo"></div>
+    <div>
+      <h2>Meet the Godfather of Price Action.</h2>
+      <p>The Godfather of Price Action started School of Flips FX to give new traders what they were missing: a plain-spoken mentor, a repeatable plan and a community that holds each other accountable.</p>
+      <p>With years of experience in the forex markets, specializing in XAUUSD and major currency pairs, the Godfather of Price Action focuses on simplifying market structure, price action, and risk management. His goal is to equip traders with practical skills, a repeatable trading strategy, and the discipline to trade independently and consistently.</p>
+      <div class="rule">“Poverty has no glory, keep pushing.”</div>
+    </div>
+  </div>
+</section>
+
+<section class="programs" id="services">
+  <div class="wrap">
+    <h2>Our services</h2>
+    <p style="margin-top:1rem;color:var(--muted)">Message us on WhatsApp to get started with any paid service.</p>
+    <ul class="svc">
+      <li>
+        <div><h3>Mentorship</h3><p>One month of training in pure price action. You learn our price action strategy from the ground up, with nothing else layered on top.</p></div>
+        <div class="buy"><div class="price">$300<small>1 month</small></div><a class="btn btn-main" data-wa="Mentorship ($300, 1 month)" href="#contact">Get mentorship</a></div>
+      </li>
+      <li>
+        <div><h3>VIP Signals</h3><p>Our VIP signal group. Trades are sent every day: XAUUSD (gold) from Monday to Friday and BTCUSD on Saturday and Sunday.</p></div>
+        <div class="buy"><div class="price">$50<small>per month</small></div><a class="btn btn-main" data-wa="VIP Signals ($50 per month)" href="#contact">Join VIP signals</a></div>
+      </li>
+      <li id="community">
+        <div><h3>General Community</h3><p>Where we run our challenges and giveaways and share events and all the latest updates. Open to everyone.</p></div>
+        <div class="buy"><div class="price">Free</div><a class="btn btn-ghost"  href="https://t.me/schoolofflipscommunity" target="_blank" rel="noopener">Join the community</a></div>
+      </li>
+      <li>
+        <div><h3>Account Management</h3><p>Let our professional trading team manage your account with a minimum deposit of $500. We handle the trading, and you enjoy a 50/50 split on net profits.
+
+Trading involves risk. Profits are not guaranteed, and losses may occur.</p><p class="note">Trading carries risk and returns are never guaranteed.</p></div>
+        <div class="buy"><div class="price">$500<small>minimum deposit</small></div><a class="btn btn-main" data-wa="Account Management ($500 minimum deposit)" href="#contact">Enquire now</a></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="method">
+  <div class="wrap">
+    <h2>How we approach every trade</h2>
+    <ol class="steps">
+      <li><h3>Read the market</h3><p>Mark key levels and the higher-timeframe bias before the session starts.</p></li>
+      <li><h3>Wait for confirmation</h3><p>No setup, no trade. We let price show its hand.</p></li>
+      <li><h3>Enter with a plan</h3><p>Entry, stop and target are set before the order goes in.</p></li>
+      <li><h3>Manage the risk</h3><p>Fixed position sizing and a daily loss limit protect the account.</p></li>
+    </ol>
+    <p style="margin-top:2rem;color:var(--muted)">Our trading approach is built around the Pure Perception Strategy, focusing on market structure, liquidity and precise execution. We wait for clear market confirmation before entering trades, apply disciplined risk management and prioritise capital preservation. Our goal is continuous growth through consistency, patience and a structured approach to the markets.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact">
+    <div>
+      <h2>Join School of Flips FX</h2>
+      <p style="margin-top:1rem">Send a quick message and we will get back to you with the next steps.</p>
+      <p><a href="https://wa.me/254706385273" id="wa-direct"><b>WhatsApp: +254 706 385 273</b></a></p>
+      <div class="socials">
+        <a href="https://www.tiktok.com/@godfatherofpriceaction?_r=1&_t=ZS-9B3y6GVYxa2">TikTok</a><a href="https://t.me/schoolofflipscommunity" target="_blank" rel="noopener">Telegram</a><a href="https://youtube.com/@_hommie_tiller_?si=e68LRBFht2AO8u7a">YouTube</a>
+      </div>
+    </div>
+    <form id="enq">
+      <label>Your name<input name="name" required autocomplete="name"></label>
+      <label>I’m interested in
+        <select name="topic"><option>Mentorship ($300)</option><option>VIP Signals ($50/month)</option><option>Account Management ($500 minimum)</option><option>Something else</option></select>
+      </label>
+      <label>Message<textarea name="msg" rows="4"></textarea></label>
+      <button class="btn btn-main" type="submit">Send on WhatsApp</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><img id="flogo" alt="School of Flips FX" style="mix-blend-mode:lighten;height:3rem;width:auto;display:block;margin-bottom:1rem"><b style="color:var(--hero-ink)">School of Flips FX</b> · © <span id="yr">2026</span> All rights reserved.</p>
+    <p>Risk warning: trading forex, CFDs, crypto and other leveraged products carries a high risk of loss and may not suit everyone. Content on this site is for education only and is not financial advice. Never trade money you cannot afford to lose.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var NUMBER='254706385273'; // replace with your WhatsApp business number, no plus sign
+  var COMMUNITY_LINK='https://chat.whatsapp.com/YOUR-COMMUNITY-LINK'; // replace with your free community link
+  document.getElementById('flogo').src=document.querySelector('.logo-img').src;
+  try{document.getElementById('yr').textContent=new Date().getFullYear();}catch(e){}
+  document.getElementById('mentor-about').src=document.getElementById('mentor-hero').src;
+  document.querySelectorAll('[data-wa]').forEach(function(a){
+    a.href='https://wa.me/'+NUMBER+'?text='+encodeURIComponent('Hi, I’d like to get '+a.getAttribute('data-wa')+' from School of Flips FX.');
+    a.target='_blank';a.rel='noopener';
+  });
+  document.getElementById('community-link').href=COMMUNITY_LINK;
+  document.getElementById('wa-direct').href='https://wa.me/'+NUMBER;
+  document.getElementById('enq').addEventListener('submit',function(e){
+    e.preventDefault();
+    var f=e.target;
+    var text='Hi, I’m '+f.name.value+'. I’m interested in: '+f.topic.value+'. '+f.msg.value;
+    window.open('https://wa.me/'+NUMBER+'?text='+encodeURIComponent(text),'_blank','noopener');
+  });
+})();
+</script>
+</body>
+</html>
